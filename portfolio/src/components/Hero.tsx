@@ -4,12 +4,8 @@ import { PageSection } from './PageSection';
 
 const HeroSection = styled(PageSection)`
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
   overflow: hidden;
-  padding: 0;
   
   &::before {
     content: '';
@@ -28,21 +24,39 @@ const HeroSection = styled(PageSection)`
 `;
 
 const Content = styled.div`
-  position: relative;
-  z-index: 1;
   text-align: center;
   max-width: 800px;
   width: 100%;
+  margin: 0 auto;
   padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+`;
+
+const TextContent = styled.div`
+  margin-bottom: 8rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const ScrollContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
 `;
 
 const Greeting = styled(motion.h1)`
   font-size: clamp(2rem, 8vw, 4rem);
   margin-bottom: 2rem;
-  background: ${({ theme }) => theme.gradient};
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: ${({ theme }) => theme.primary};
 `;
 
 const Title = styled(motion.h2)`
@@ -56,48 +70,57 @@ const Description = styled(motion.p)`
   font-size: clamp(1rem, 4vw, 1.25rem);
   color: ${({ theme }) => theme.secondary};
   line-height: 1.8;
-  margin-bottom: 3rem;
   white-space: pre-line;
 `;
 
 const ScrollIndicator = styled(motion.div)`
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
   color: ${({ theme }) => theme.text};
-  font-size: 0.875rem;
-  opacity: 0.8;
-  
+  font-size: 1.125rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: ${({ theme }) => `${theme.background}80`};
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  backdrop-filter: blur(8px);
+
   &::after {
     content: '';
     width: 2px;
-    height: 60px;
-    background: ${({ theme }) => theme.text};
+    height: 40px;
+    background: ${({ theme }) => theme.primary};
     animation: scroll 2s ease-in-out infinite;
   }
-  
+
   @keyframes scroll {
     0% {
       transform: scaleY(0);
       transform-origin: top;
+      opacity: 0;
     }
     50% {
       transform: scaleY(1);
       transform-origin: top;
+      opacity: 1;
     }
     50.1% {
       transform: scaleY(1);
       transform-origin: bottom;
+      opacity: 1;
     }
     100% {
       transform: scaleY(0);
       transform-origin: bottom;
+      opacity: 0;
     }
+  }
+
+  &:hover {
+    color: ${({ theme }) => theme.primary};
+    transform: translateY(-5px);
   }
 `;
 
@@ -112,36 +135,41 @@ export const Hero = () => {
   return (
     <HeroSection id="hero">
       <Content>
-        <Greeting
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          안녕하세요! 👋
-        </Greeting>
-        <Title
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          저는 열정적인 웹 개발자입니다
-        </Title>
-        <Description
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          {`사용자 경험을 중요시하며, 새로운 기술을 배우고 적용하는 것을 좋아합니다.
+        <TextContent>
+          <Greeting
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            안녕하세요! 👋
+          </Greeting>
+          <Title
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            배움을 갈망하는 개발자, 신지윤입니다.
+          </Title>
+          <Description
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            {`사용자 경험을 중요시하며, 새로운 기술을 배우고 적용하는 것을 좋아합니다.
 웹 개발을 통해 사람들의 삶을 더 편리하고 즐겁게 만들고 싶습니다.`}
-        </Description>
-        <ScrollIndicator
-          onClick={scrollToNextSection}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 1 }}
-        >
-          더 알아보기
-        </ScrollIndicator>
+          </Description>
+        </TextContent>
+        <ScrollContainer>
+          <ScrollIndicator
+            onClick={scrollToNextSection}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 1 }}
+            whileHover={{ scale: 1.05 }}
+          >
+            더 알아보기
+          </ScrollIndicator>
+        </ScrollContainer>
       </Content>
     </HeroSection>
   );
