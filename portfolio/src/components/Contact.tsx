@@ -71,20 +71,26 @@ const contactItems = [
   {
     icon: '📧',
     title: 'Email',
-    text: 'example@email.com',
-    href: 'mailto:example@email.com'
+    text: 'shinjiyun0220@gmail.com',
+    href: 'mailto:shinjiyun0220@gmail.com'
   },
   {
     icon: '💼',
     title: 'LinkedIn',
-    text: 'linkedin.com/in/username',
-    href: 'https://linkedin.com/in/username'
+    text: 'linkedin.com/in/jiyun0220',
+    href: 'https://linkedin.com/in/jiyun0220'
   },
   {
     icon: '💻',
     title: 'GitHub',
-    text: 'github.com/username',
-    href: 'https://github.com/username'
+    text: 'github.com/jiyun0220 ',
+    href: 'https://github.com/jiyun0220'
+  },
+  {
+    icon: '📃',
+    title: 'Portfolio',
+    text: 'notion.so/Shin-Ji-Yun ',
+    href: 'https://www.notion.so/Shin-Ji-Yun-018e34132c1142da9fb4bb98489ecb99?pvs=4'
   }
 ];
 
