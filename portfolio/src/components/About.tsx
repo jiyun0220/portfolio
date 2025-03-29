@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { PageSection } from './PageSection';
@@ -95,7 +96,7 @@ export const About = () => {
           transition={{ duration: 0.5 }}
         >
           <Image
-            src="/images/profile.jpg"
+            src="/public/assets/me.jpeg"
             alt="Profile"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -105,9 +106,7 @@ export const About = () => {
         <Info variants={containerVariants} initial="hidden" whileInView="show" viewport={{ once: true }}>
           <Title variants={itemVariants}>About Me</Title>
           <Description variants={itemVariants}>
-            안녕하세요! 저는 대구소프트웨어마이스터고등학교에서 웹 개발을 공부하고 있는 학생입니다.
-            프론트엔드 개발에 관심이 많으며, 사용자 경험을 개선하는 것에 열정을 가지고 있습니다.
-            React와 TypeScript를 주로 사용하며, 최신 웹 기술과 트렌드를 학습하고 적용하는 것을 좋아합니다.
+          안녕하세요, 대구소프트웨어마이스터고 인공지능소프트웨어과에서 프론트엔드 개발을 공부하고 있는 신지윤입니다. 배움을 갈망하는 개발자로서 하루하루 새로운 것을 익히며 성장하고 있습니다. 웹과 iOS 개발을 공부하고 있으며, 디자인과 기획 경험도 쌓아왔습니다. 더 많은 경험을 위해 끊임없이 도전하며, 개발자로서 한 걸음씩 나아가고 있습니다.
           </Description>
           <SocialLinks variants={containerVariants}>
             <SocialLink

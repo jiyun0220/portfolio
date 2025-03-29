@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
@@ -17,14 +18,14 @@ const NavigationContainer = styled.nav`
 `;
 
 interface NavDotProps {
-  active: boolean;
+  $active: boolean;
 }
 
 const NavDot = styled.a<NavDotProps>`
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: ${({ theme, active }) => active ? theme.text : `${theme.text}40`};
+  background: ${({ theme, $active }) => $active ? theme.text : `${theme.text}40`};
   transition: all 0.3s ease;
   cursor: pointer;
 
@@ -50,18 +51,18 @@ export const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPos = window.scrollY;
-      const windowHeight = window.innerHeight;
-      
-      sections.forEach(({ id }) => {
-        const element = document.getElementById(id);
-        if (element) {
-          const { top, bottom } = element.getBoundingClientRect();
-          if (top <= windowHeight / 2 && bottom >= windowHeight / 2) {
-            setActiveSection(id);
-          }
+      const sections = document.querySelectorAll('section');
+      let current = '';
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= sectionTop - sectionHeight / 3) {
+          current = section.getAttribute('id') || '';
         }
       });
+
+      setActiveSection(current);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -74,8 +75,8 @@ export const Navigation = () => {
         <NavDot
           key={id}
           href={`#${id}`}
-          active={activeSection === id}
-          title={label}
+          $active={activeSection === id}
+          aria-label={label}
         />
       ))}
     </NavigationContainer>

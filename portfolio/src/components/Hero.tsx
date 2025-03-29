@@ -1,6 +1,8 @@
+import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { PageSection } from './PageSection';
+import { FaGithub, FaEnvelope } from 'react-icons/fa';
 
 const HeroSection = styled(PageSection)`
   min-height: 100vh;
@@ -79,8 +81,8 @@ const ScrollIndicator = styled(motion.div)`
   align-items: center;
   gap: 1rem;
   color: ${({ theme }) => theme.text};
-  font-size: 1.125rem;
   font-weight: 500;
+  font-size: 1.125rem;
   cursor: pointer;
   background: ${({ theme }) => `${theme.background}80`};
   padding: 1rem 2rem;
@@ -155,8 +157,8 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            {`사용자 경험을 중요시하며, 새로운 기술을 배우고 적용하는 것을 좋아합니다.
-웹 개발을 통해 사람들의 삶을 더 편리하고 즐겁게 만들고 싶습니다.`}
+            {`새로운 기술을 배우고 도전하며,
+            코드로 가치를 창출해 세상을 변화시킵니다.`}
           </Description>
         </TextContent>
         <ScrollContainer>
@@ -167,7 +169,7 @@ export const Hero = () => {
             transition={{ duration: 0.5, delay: 1 }}
             whileHover={{ scale: 1.05 }}
           >
-            더 알아보기
+            더보기
           </ScrollIndicator>
         </ScrollContainer>
       </Content>

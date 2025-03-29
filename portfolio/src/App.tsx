@@ -7,12 +7,17 @@ import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Skills } from './components/Skills';
 import { Projects } from './components/Projects';
-import { Education } from './components/Education';
 import { Activities } from './components/Activities';
 import { Awards } from './components/Awards';
 import { Contact } from './components/Contact';
 
-const MainContainer = styled.main`
+interface MainContainerProps {
+  theme: {
+    background: string;
+  };
+}
+
+const MainContainer = styled.main<MainContainerProps>`
   height: 100vh;
   overflow-y: auto;
   scroll-snap-type: y mandatory;
@@ -37,7 +42,6 @@ const App = () => {
       <MainContainer>
         <Hero />
         <About />
-        <Education />
         <Skills />
         <Projects />
         <Activities />

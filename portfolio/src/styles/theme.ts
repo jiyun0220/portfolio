@@ -1,35 +1,35 @@
-export const lightTheme = {
-  background: '#ffffff',
-  text: '#1e293b',
-  primary: '#6366f1',
-  secondary: '#475569',
-  accent: '#818cf8',
-  border: '#e2e8f0',
-  card: '#f8fafc',
-  selection: '#e2e8f0',
-  muted: '#64748b',
-  success: '#22c55e',
-  error: '#ef4444',
-  warning: '#f59e0b',
-  gradient: 'linear-gradient(135deg, #6366f1 0%, #818cf8 100%)',
-  shadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+import { DefaultTheme } from 'styled-components';
+
+export const lightTheme: DefaultTheme = {
+  background: '#FFFFFF',
+  text: '#1A1A1A',
+  primary: '#007AFF',
+  secondary: '#6B7280',
+  accent: '#5856D6',
+  border: '#E5E7EB',
+  card: '#F3F4F6',
+  shadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+  gradient: 'linear-gradient(135deg, #007AFF, #5856D6)',
+  error: '#EF4444',
+  success: '#10B981',
+  warning: '#F59E0B',
+  info: '#3B82F6'
 };
 
-export const darkTheme = {
-  background: '#0f172a',
-  text: '#f8fafc',
-  primary: '#818cf8',
-  secondary: '#94a3b8',
-  accent: '#6366f1',
-  border: '#1e293b',
-  card: '#1e293b',
-  selection: '#334155',
-  muted: '#64748b',
-  success: '#22c55e',
-  error: '#ef4444',
-  warning: '#f59e0b',
-  gradient: 'linear-gradient(135deg, #818cf8 0%, #6366f1 100%)',
-  shadow: '0 4px 6px rgba(0, 0, 0, 0.3)'
+export const darkTheme: DefaultTheme = {
+  background: '#0A0A0A',
+  text: '#F3F4F6',
+  primary: '#60A5FA',
+  secondary: '#9CA3AF',
+  accent: '#8B5CF6',
+  border: '#374151',
+  card: '#1F2937',
+  shadow: '0 4px 6px rgba(0, 0, 0, 0.3)',
+  gradient: 'linear-gradient(135deg, #60A5FA, #8B5CF6)',
+  error: '#F87171',
+  success: '#34D399',
+  warning: '#FBBF24',
+  info: '#60A5FA'
 };
 
 export type Theme = typeof lightTheme;

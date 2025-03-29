@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { PageSection } from './PageSection';
@@ -144,26 +145,6 @@ const Description = styled.p`
   margin-bottom: 1rem;
 `;
 
-const AchievementList = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin-top: 1rem;
-`;
-
-const AchievementItem = styled.li`
-  position: relative;
-  padding-left: 1.5rem;
-  margin-bottom: 0.5rem;
-  line-height: 1.6;
-  color: ${({ theme }) => theme.text};
-  
-  &:before {
-    content: '🏆';
-    position: absolute;
-    left: 0;
-  }
-`;
-
 export const Activities = () => {
   return (
     <PageSection id="activities">
@@ -194,11 +175,6 @@ export const Activities = () => {
                 <Date>{activity.date}</Date>
                 <ActivityTitle>{activity.title}</ActivityTitle>
                 <Description>{activity.description}</Description>
-                <AchievementList>
-                  {activity.achievements.map((achievement, i) => (
-                    <AchievementItem key={i}>{achievement}</AchievementItem>
-                  ))}
-                </AchievementList>
               </TimelineContent>
             </TimelineItem>
           ))}

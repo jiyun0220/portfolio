@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { PageSection } from './PageSection';
@@ -78,36 +79,30 @@ const skillsData = [
     category: "Frontend",
     icon: "💻",
     skills: [
-      { name: "React", level: 90 },
-      { name: "TypeScript", level: 85 },
-      { name: "Next.js", level: 80 },
-      { name: "HTML/CSS", level: 95 },
-      { name: "JavaScript", level: 90 },
-      { name: "Styled Components", level: 85 }
+      { name: "React", level: 60 },
+      { name: "TypeScript", level: 40 },
+      { name: "Next.js", level: 40 },
+      { name: "HTML/CSS", level: 90 },
+      { name: "JavaScript", level: 60 },
+      { name: "Swift", level: 70 }
     ]
   },
   {
     category: "Backend",
     icon: "⚙️",
     skills: [
-      { name: "Node.js", level: 80 },
-      { name: "Express", level: 75 },
-      { name: "Spring Boot", level: 70 },
-      { name: "MySQL", level: 75 },
-      { name: "MongoDB", level: 70 },
-      { name: "REST API", level: 85 }
+      { name: "python", level: 60 },
     ]
   },
   {
     category: "Tools & Others",
     icon: "🛠️",
     skills: [
-      { name: "Git", level: 85 },
-      { name: "Docker", level: 70 },
-      { name: "AWS", level: 65 },
-      { name: "Jest", level: 75 },
+      { name: "Git", level: 80 },
+      { name: "Vite", level: 50 },
+      { name: "Notion", level: 90 },
+      { name: "Photoshop", level: 80 },
       { name: "Figma", level: 70 },
-      { name: "Agile/Scrum", level: 80 }
     ]
   }
 ];

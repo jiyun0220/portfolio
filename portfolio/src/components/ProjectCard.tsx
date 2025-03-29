@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { FaGithub } from 'react-icons/fa';
@@ -94,7 +95,7 @@ const TechStack = styled.div`
 `;
 
 const TechTag = styled.span`
-  background: ${({ theme }) => `${theme.primary}20`};
+  background: ${({ theme }) => theme.card};
   color: ${({ theme }) => theme.primary};
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
@@ -190,7 +191,7 @@ export const ProjectCard = ({
             <FaGithub />
           </GithubLink>
         </Footer>
-        <Award>{award}</Award>
+        {award && <Award>{award}</Award>}
       </Content>
     </Card>
   );

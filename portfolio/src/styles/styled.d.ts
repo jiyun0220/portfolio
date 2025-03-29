@@ -9,12 +9,11 @@ declare module 'styled-components' {
     accent: string;
     border: string;
     card: string;
-    selection: string;
-    muted: string;
-    success: string;
-    error: string;
-    warning: string;
-    gradient: string;
     shadow: string;
+    gradient: string;
+    error: string;
+    success: string;
+    warning: string;
+    info: string;
   }
 }
