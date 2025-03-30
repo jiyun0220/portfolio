@@ -33,7 +33,7 @@ export const activities: Activity[] = [
   {
     date: "2024.08.15 - 2024.08.16",
     title: "DGIST 코딩 오디세이",
-    description: "알고리즘 문제 해결 능력 향상을 위한 대회 참여"
+    description: "문제 해결 능력 향상을 위한 대회 참여"
   },
   {
     date: "2024.08.25 - 2024.08.27",
@@ -63,7 +63,7 @@ export const activities: Activity[] = [
   {
     date: "2025.02.15 - 2025.02.16",
     title: "하이톤",
-    description: "혁신적인 아이디어를 실현하기 위한 해커톤 참여"
+    description: "아이디어를 실현하기 위한 해커톤 참여"
   },
   {
     date: "2025.02.22",

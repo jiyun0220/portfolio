@@ -1,7 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { useTheme } from '../contexts/ThemeContext';
+
+interface ThemeToggleProps {
+  isDark: boolean;
+  toggleTheme: () => void;
+}
 
 const ToggleButton = styled(motion.button)`
   position: fixed;
@@ -44,9 +48,7 @@ const Icon = styled(motion.svg)`
   }
 `;
 
-export const ThemeToggle = () => {
-  const { isDark, toggleTheme } = useTheme();
-
+export const ThemeToggle: React.FC<ThemeToggleProps> = ({ isDark, toggleTheme }) => {
   return (
     <ToggleButton
       onClick={toggleTheme}

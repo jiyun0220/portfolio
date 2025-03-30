@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { PageSection } from './PageSection';
+import { PageSection } from '../common/PageSection';
 import { FaGithub, FaEnvelope } from 'react-icons/fa';
 
 const HeroSection = styled(PageSection)`

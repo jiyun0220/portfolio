@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { PageSection } from './PageSection';
-import { activities } from '../data/activities';
-import { containerVariants, itemVariants, contentVariants } from '../animations/timeline';
+import { PageSection } from '../common/PageSection';
+import { activities } from '../../data/activities';
+import { containerVariants, itemVariants, contentVariants } from '../../animations/timeline';
 
 const Content = styled.div`
   max-width: 1200px;
@@ -76,7 +76,7 @@ const TimelineItem = styled(motion.div)`
     top: 0;
 
     @media (max-width: 768px) {
-      left: 13px;
+      left: 12px;
     }
   }
 `;
@@ -160,6 +160,7 @@ export const Activities = () => {
           variants={containerVariants}
           initial="hidden"
           animate="show"
+          viewport={{ once: true }}
         >
           {activities.map((activity, index) => (
             <TimelineItem

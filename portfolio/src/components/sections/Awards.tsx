@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { awards } from '../data/awards';
-import { containerVariants, itemVariants, contentVariants } from '../animations/timeline';
+import { PageSection } from '../common/PageSection';
+import { awards } from '../../data/awards';
+import { containerVariants, itemVariants, contentVariants } from '../../animations/timeline';
 
-const AwardsSection = styled.section`
+const AwardsSection = styled(PageSection)`
   position: relative;
   background: ${({ theme }) => theme.background};
   padding: 4rem 0;
@@ -132,42 +133,40 @@ const Description = styled.p`
 
 export const Awards = () => {
   return (
-    <AwardsSection>
-      <div className="container">
-        <Content>
-          <Title
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            AWARD
-          </Title>
-          <Timeline
-            variants={containerVariants}
-            initial="hidden"
-            animate="show"
-          >
-            {awards.map((award, index) => (
-              <TimelineItem
-                key={index}
+    <AwardsSection id="awards">
+      <Content>
+        <Title
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          AWARD
+        </Title>
+        <Timeline
+          variants={containerVariants}
+          initial="hidden"
+          animate="show"
+        >
+          {awards.map((award, index) => (
+            <TimelineItem
+              key={index}
+              isEven={index % 2 === 0}
+              custom={index % 2 === 0}
+              variants={itemVariants}
+            >
+              <TimelineContent
                 isEven={index % 2 === 0}
-                custom={index % 2 === 0}
-                variants={itemVariants}
+                whileHover="hover"
+                variants={contentVariants}
               >
-                <TimelineContent
-                  isEven={index % 2 === 0}
-                  whileHover="hover"
-                  variants={contentVariants}
-                >
-                  <Date>{award.date}</Date>
-                  <AwardTitle>{award.title}</AwardTitle>
-                  <Description>{award.description}</Description>
-                </TimelineContent>
-              </TimelineItem>
-            ))}
-          </Timeline>
-        </Content>
-      </div>
+                <Date>{award.date}</Date>
+                <AwardTitle>{award.title}</AwardTitle>
+                <Description>{award.description}</Description>
+              </TimelineContent>
+            </TimelineItem>
+          ))}
+        </Timeline>
+      </Content>
     </AwardsSection>
   );
 };

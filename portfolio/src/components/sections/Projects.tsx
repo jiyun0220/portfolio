@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { PageSection } from './PageSection';
-import { ProjectCard } from './ProjectCard';
+import { PageSection } from '../common/PageSection';
+import { ProjectCard } from '../common/ProjectCard';
 
 const Content = styled.div`
   max-width: 1200px;

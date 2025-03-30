@@ -38,7 +38,7 @@ export const awards: Award[] = [
   {
     date: "2024.08.16",
     title: "DGIST 코딩 오디세이 동상",
-    description: "알고리즘 문제 해결 능력 인정"
+    description: "문제 해결 능력 인정"
   },
   {
     date: "2024.05.29",

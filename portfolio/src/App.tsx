@@ -1,23 +1,25 @@
-import styled from 'styled-components';
-import { ThemeProvider } from './contexts/ThemeContext';
+import React, { useState } from 'react';
+import styled, { ThemeProvider } from 'styled-components';
+import { lightTheme, darkTheme } from './styles/theme';
 import { GlobalStyle } from './styles/GlobalStyle';
-import { ThemeToggle } from './components/ThemeToggle';
-import { Navigation } from './components/Navigation';
-import { Hero } from './components/Hero';
-import { About } from './components/About';
-import { Skills } from './components/Skills';
-import { Projects } from './components/Projects';
-import { Activities } from './components/Activities';
-import { Awards } from './components/Awards';
-import { Contact } from './components/Contact';
+import { Navigation } from './components/layout/Navigation';
+import { Hero } from './components/sections/Hero';
+import { About } from './components/sections/About';
+import { Skills } from './components/sections/Skills';
+import { Projects } from './components/sections/Projects';
+import { Activities } from './components/sections/Activities';
+import { Awards } from './components/sections/Awards';
+import { Contact } from './components/sections/Contact';
+import { ThemeToggle } from './components/common/ThemeToggle';
 
 interface MainContainerProps {
-  theme: {
-    background: string;
-  };
+  $isDark: boolean;
 }
 
-const MainContainer = styled.main<MainContainerProps>`
+const MainContainer = styled.div<MainContainerProps>`
+  background: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.text};
+  transition: all 0.3s ease;
   height: 100vh;
   overflow-y: auto;
   scroll-snap-type: y mandatory;
@@ -33,13 +35,20 @@ const MainContainer = styled.main<MainContainerProps>`
   }
 `;
 
-const App = () => {
+export const App = () => {
+  const [isDark, setIsDark] = useState(false);
+  const theme = isDark ? darkTheme : lightTheme;
+
+  const toggleTheme = () => {
+    setIsDark(!isDark);
+  };
+
   return (
-    <ThemeProvider>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <ThemeToggle />
-      <Navigation />
-      <MainContainer>
+      <MainContainer $isDark={isDark}>
+        <Navigation />
+        <ThemeToggle isDark={isDark} toggleTheme={toggleTheme} />
         <Hero />
         <About />
         <Skills />
@@ -51,5 +60,3 @@ const App = () => {
     </ThemeProvider>
   );
 };
-
-export default App;
