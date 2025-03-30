@@ -7,7 +7,7 @@ const NavigationContainer = styled.nav`
   right: 2rem;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 100;
+  z-index: 1000;
   display: flex;
   flex-direction: column;
   gap: 1rem;

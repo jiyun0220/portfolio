@@ -5,11 +5,38 @@ import { PageSection } from '../common/PageSection';
 import { activities } from '../../data/activities';
 import { containerVariants, itemVariants, contentVariants } from '../../animations/timeline';
 
+const ActivitiesSection = styled(PageSection)`
+  position: relative;
+  background: ${({ theme }) => theme.background};
+  padding: 4rem 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      ${({ theme }) => theme.accent}15,
+      ${({ theme }) => theme.primary}15
+    );
+    z-index: 0;
+  }
+`;
+
 const Content = styled.div`
+  position: relative;
+  z-index: 1;
   max-width: 1200px;
   width: 100%;
   text-align: center;
   padding: 2rem;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 `;
 
 const Title = styled(motion.h2)`
@@ -147,7 +174,7 @@ const Description = styled.p`
 
 export const Activities = () => {
   return (
-    <PageSection id="activities">
+    <ActivitiesSection id="activities">
       <Content>
         <Title
           initial={{ opacity: 0, y: 20 }}
@@ -181,6 +208,6 @@ export const Activities = () => {
           ))}
         </Timeline>
       </Content>
-    </PageSection>
+    </ActivitiesSection>
   );
 };

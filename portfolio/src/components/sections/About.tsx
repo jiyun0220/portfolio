@@ -102,16 +102,6 @@ const SocialLink = styled(motion.a)`
   }
 `;
 
-const FloatingElement = styled(motion.div)`
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: ${({ theme }) => theme.gradient};
-  opacity: 0.1;
-  z-index: -1;
-`;
-
 export const About = () => {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
@@ -120,30 +110,6 @@ export const About = () => {
   return (
     <PageSection id="about">
       <Content>
-        <FloatingElement
-          style={{ top: '10%', left: '5%' }}
-          animate={{
-            y: [0, 20, 0],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-        <FloatingElement
-          style={{ bottom: '10%', right: '5%' }}
-          animate={{
-            y: [0, -20, 0],
-            rotate: [360, 180, 0],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
         <ImageContainer>
           <Image
             src="/assets/me.jpeg"

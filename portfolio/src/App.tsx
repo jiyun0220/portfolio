@@ -36,7 +36,8 @@ const MainContainer = styled.div<MainContainerProps>`
 `;
 
 export const App = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true); // 기본값을 true로 설정
+
   const theme = isDark ? darkTheme : lightTheme;
 
   const toggleTheme = () => {
