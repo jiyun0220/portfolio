@@ -112,7 +112,7 @@ const projects = [
       'Swift Concurrency를 활용한 비동기 처리'
     ],
     techStack: ['Swift & SwiftUI', 'Alamofire & Moya', 'MVVM', 'Tuist', 'clean-architecture', 'SwiftInject', 'swift-concurency'],
-    image: '/public/assets/B1ND.webp',
+    image: '/assets/B1ND.webp',
     github: 'https://github.com/B1ND-7th',
     role: 'iOS 앱 개발',
     period: '2024.03 - 현재',
@@ -129,7 +129,7 @@ const projects = [
       '반응형 디자인 구현'
     ],
     techStack: ['React', 'TypeScript', 'Styled Components', 'Framer Motion'],
-    image: '/public/assets/web.png',
+    image: '/assets/web.png',
     github: 'https://github.com/jiyun0220/portfolio',
     role: '프론트엔드 개발',
     period: '2024.03',
@@ -146,7 +146,7 @@ const projects = [
       'UI/UX 디자인'
     ],
     techStack: ['React', 'TypeScript', 'FastAPI', 'Machine Learning'],
-    image: '/public/assets/DailyKick.svg',
+    image: '/assets/DailyKick.svg',
     github: 'https://github.com/jiyun0220/DailyKick',
     role: '프론트엔드 개발 & UI/UX 디자인',
     period: '2024.12',
@@ -163,7 +163,7 @@ const projects = [
       '발표 불안감 해소를 위한 UI/UX 디자인'
     ],
     techStack: ['React Native', 'TypeScript', 'OpenAI', 'Speech Recognition'],
-    image: '/public/assets/Speakit.svg',
+    image: '/assets/Speakit.svg',
     github: 'https://github.com/jiyun0220/Speakit',
     role: '프론트엔드 개발',
     period: '2025.02',

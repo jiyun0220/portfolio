@@ -146,7 +146,7 @@ export const About = () => {
         />
         <ImageContainer>
           <Image
-            src="/public/assets/me.jpeg"
+            src="/assets/me.jpeg"
             alt="Profile"
             initial={{ scale: 0.8, opacity: 0, rotateY: -15 }}
             animate={{ scale: 1, opacity: 1, rotateY: 0 }}
