@@ -1,5 +1,6 @@
 # 포트폴리오 웹사이트
 
+**[포트폴리오 웹사이트](https://jiyun0.netlify.app/)**
 React, TypeScript, Framer Motion으로 제작한 포트폴리오 웹사이트입니다.
 
 ## 주요 기능
